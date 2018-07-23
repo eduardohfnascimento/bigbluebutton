@@ -352,7 +352,8 @@
       "timeout": 5000,
       "debug": true,
       "channels": {
-        "toAkkaApps": "to-akka-apps-redis-channel"
+        "toAkkaApps": "to-akka-apps-redis-channel",
+        "toSfuPhone": "to-sfu-phone"
       },
       "subscribeTo": [
         "to-html5-redis-channel",

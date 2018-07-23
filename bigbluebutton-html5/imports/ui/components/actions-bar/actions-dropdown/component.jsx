@@ -9,6 +9,7 @@ import DropdownContent from '/imports/ui/components/dropdown/content/component';
 import DropdownList from '/imports/ui/components/dropdown/list/component';
 import DropdownListItem from '/imports/ui/components/dropdown/list/item/component';
 import PresentationUploaderContainer from '/imports/ui/components/presentation/presentation-uploader/container';
+import DialSIPContainer from '/imports/ui/components/dial/container';
 import { withModalMounter } from '/imports/ui/components/modal/service';
 import { styles } from '../styles';
 
@@ -22,6 +23,10 @@ const intlMessages = defineMessages({
   actionsLabel: {
     id: 'app.actionsBar.actionsDropdown.actionsLabel',
     description: 'Actions button label',
+  },
+  dialLabel: {
+    id: 'app.actionsBar.actionsDropdown.dialLabel',
+    description: 'Dial a SIP Endpoint',
   },
   presentationLabel: {
     id: 'app.actionsBar.actionsDropdown.presentationLabel',
@@ -64,6 +69,7 @@ class ActionsDropdown extends Component {
   constructor(props) {
     super(props);
     this.handlePresentationClick = this.handlePresentationClick.bind(this);
+    this.handledialSIPClick = this.handledialSIPClick.bind(this);
   }
 
   componentWillMount() {
@@ -99,6 +105,12 @@ class ActionsDropdown extends Component {
       BROWSER_RESULTS.os.includes('Android'); // mobile flag doesn't always work
 
     return _.compact([
+      <DropdownListItem
+        icon="audio_on"
+        label="Dial SIP"
+        description="Dial a SIP Endpoint"
+        onClick={this.handledialSIPClick}
+      />,
       (isUserPresenter ?
         <DropdownListItem
           icon="presentation"
@@ -136,6 +148,11 @@ class ActionsDropdown extends Component {
 
   handlePresentationClick() {
     this.props.mountModal(<PresentationUploaderContainer />);
+  }
+
+  handledialSIPClick() {
+    console.log(this.props);
+    this.props.mountModal(<DialSIPContainer />);
   }
 
   render() {

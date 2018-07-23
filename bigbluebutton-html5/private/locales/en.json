@@ -190,6 +190,7 @@
     "app.switch.onLabel": "ON",
     "app.switch.offLabel": "OFF",
     "app.actionsBar.actionsDropdown.actionsLabel": "Actions",
+    "app.actionsBar.actionsDropdown.dialLabel": "Dial SIP",
     "app.actionsBar.actionsDropdown.presentationLabel": "Upload a presentation",
     "app.actionsBar.actionsDropdown.initPollLabel": "Initiate a poll",
     "app.actionsBar.actionsDropdown.desktopShareLabel": "Share your screen",
@@ -383,5 +384,6 @@
     "app.videoDock.webcamFocusLabel": "Focus",
     "app.videoDock.webcamFocusDesc": "Focus the selected webcam",
     "app.videoDock.webcamUnfocusLabel": "Unfocus",
-    "app.videoDock.webcamUnfocusDesc": "Unfocus the selected webcam"
+    "app.videoDock.webcamUnfocusDesc": "Unfocus the selected webcam",
+    "app.call.title": "Dial a SIP endpoint"
 }

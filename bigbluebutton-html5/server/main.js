@@ -15,6 +15,7 @@ import '/imports/api/screenshare/server';
 import '/imports/api/voice-users/server';
 import '/imports/api/whiteboard-multi-user/server';
 import '/imports/api/video/server';
+import '/imports/api/dial/server';
 
 // Commons
 import '/imports/api/log-client/server';

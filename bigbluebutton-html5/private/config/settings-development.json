@@ -74,11 +74,11 @@
       "wsUrl": "HOST",
       "chromeDefaultExtensionKey": "akgoaoikmbmhcopjgakkcepdgdgkjfbc",
       "chromeDefaultExtensionLink": "https://chrome.google.com/webstore/detail/bigbluebutton-screenshare/akgoaoikmbmhcopjgakkcepdgdgkjfbc",
-      "chromeExtensionKey": "KEY",
-      "chromeExtensionLink": "LINK",
-      "enableScreensharing": false,
-      "enableVideo": false,
-      "enableVideoStats": false,
+      "chromeExtensionKey": "mbfngdphjegmlbfobcblikeefpidfncb",
+      "chromeExtensionLink": "https://chrome.google.com/webstore/detail/mconf-screenshare/mbfngdphjegmlbfobcblikeefpidfncb",
+      "enableScreensharing": true,
+      "enableVideo": true,
+      "enableVideoStats": true,
       "enableListenOnly": false
     },
 
@@ -352,7 +352,8 @@
       "timeout": 5000,
       "debug": true,
       "channels": {
-        "toAkkaApps": "to-akka-apps-redis-channel"
+        "toAkkaApps": "to-akka-apps-redis-channel",
+        "toSfuPhone": "to-sfu-phone"
       },
       "subscribeTo": [
         "to-html5-redis-channel",
