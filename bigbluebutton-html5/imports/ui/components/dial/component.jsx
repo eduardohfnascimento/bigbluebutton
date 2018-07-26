@@ -208,7 +208,7 @@ class DialModal extends Component {
       <span className={styles.audioOptions}>
         <div className="board-row">
           <Button
-            className={styles.audioBtn}
+            className={styles.cancelBtn}
             icon="circle_close"
             circle
             size="lg"

@@ -107,8 +107,7 @@ class ActionsDropdown extends Component {
     return _.compact([
       <DropdownListItem
         icon="audio_on"
-        label="Dial SIP"
-        description="Dial a SIP Endpoint"
+        label={intl.formatMessage(intlMessages.dialLabel)}
         onClick={this.handledialSIPClick}
       />,
       (isUserPresenter ?

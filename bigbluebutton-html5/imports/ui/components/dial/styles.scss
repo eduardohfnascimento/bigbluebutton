@@ -1,5 +1,6 @@
 @import "/imports/ui/stylesheets/variables/_all";
 @import "/imports/ui/components/modal/simple/styles";
+@import "/imports/ui/stylesheets/mixins/focus";
 
 .header {
   margin: 0;
@@ -27,6 +28,17 @@
   .audioBtn:only-child {
     margin-right: 0;
   }
+
+  .cancelBtn:nth-child(-n+2) {
+    margin-right: 2rem;
+
+    @include mq($small-only) {
+      margin-right: 1.5rem;
+    }
+  }
+  .cancelBtn:only-child {
+    margin-right: 0;
+  }
 }
 
 .audioOptions {
@@ -43,7 +55,7 @@
   @extend .modal;
   padding: 1.5rem;
   min-height: 20rem;
-  max-width: 40vw;
+  max-width: 18rem;
 }
 
 .closeBtn {
@@ -94,7 +106,8 @@
   background-color: #f1f8ff;
   box-shadow: none;
   border: 5px solid  #f1f8ff;
-  font-size: 1.0rem;
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
 
   @include mq($small-only) {
     font-size: 1.0rem;
@@ -125,7 +138,7 @@
   }
 }
 
-// When hovering over a button of class audioBtn, change the border colour of first span-child
+// When hovering over a button of class callBtn, change the border colour of first span-child
 .callBtn:hover span:first-child,
 .callBtn:focus span:first-child {
   border: 5px solid $color-primary;
@@ -145,6 +158,71 @@
   }
 }
 //calbtn
+//calcelbtn
+.cancelBtn {
+  &:focus {
+    outline: none !important;
+  }
+
+  i{
+    color: #3c5764;
+  }
+}
+
+// Modifies the audio button icon colour
+.cancelBtn span:first-child {
+  color: #1b3c4b;
+  background-color: #f1f8ff;
+  box-shadow: none;
+  border: 5px solid  #f1f8ff;
+
+  @include mq($small-only) {
+    font-size: 1.0rem;
+  }
+}
+
+// When hovering over a button of class audioBtn, change the border colour of first span-child
+.cancelBtn:hover span:first-child,
+.cancelBtn:focus span:first-child {
+  border: 5px solid $color-primary;
+  background-color: #f1f8ff;
+}
+
+// Modifies the button label text
+.cancelBtn span:last-child {
+  color: black;
+  font-size: 1rem;
+  font-weight: 600;
+}
+//calcelbtn
+
+.input {
+  @include inputFocus($color-blue-light);
+
+  flex: 1;
+  background: #fff;
+  background-clip: padding-box;
+  margin: 0;
+  color: $color-text;
+  -webkit-appearance: none;
+  outline: 0;
+  padding: $sm-padding-y * 2.5 $sm-padding-x * 1.25;
+  resize: none;
+  transition: none;
+  border-radius: $border-radius;
+  font-size: $font-size-base;
+  min-height: 2.5rem;
+  max-height: 10rem;
+  border: 1px solid $color-gray-lighter;
+  box-shadow: 0 0 0 2px $color-gray-lighter;
+
+  &:disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: .75;
+    background-color: fade-out($color-gray-lighter, .75);
+  }
+}
 
 .title {
   text-align: center;
