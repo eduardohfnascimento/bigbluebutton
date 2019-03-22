@@ -48,6 +48,7 @@ class PresentationArea extends Component {
   }
 
   componentWillUnmount() {
+    MediaService.toggleSwapLayout();
     window.removeEventListener('resize', () => {
       setTimeout(this.handleResize.bind(this), 0);
     });
